@@ -24,7 +24,6 @@ import dev.cubxity.plugins.metrics.fabric.metrics.events.EventsCollection
 import dev.cubxity.plugins.metrics.fabric.metrics.server.ServerCollection
 import dev.cubxity.plugins.metrics.fabric.metrics.tick.TickCollection
 import dev.cubxity.plugins.metrics.fabric.metrics.world.WorldCollection
-import java.util.concurrent.Executors
 
 class UnifiedMetricsFabricPlugin(
     override val bootstrap: UnifiedMetricsFabricBootstrap

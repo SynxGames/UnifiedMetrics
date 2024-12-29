@@ -40,7 +40,7 @@ public class MinecraftServerMixin {
         method = "runServer",
         at = @At(
             value = "INVOKE",
-            target = "Lnet/minecraft/server/MinecraftServer;setFavicon(Lnet/minecraft/server/ServerMetadata;)V"
+            target = "Lnet/minecraft/server/MinecraftServer;loadStatusIcon()Ljava/util/Optional;"
         )
     )
     private void onRunServerBeforeLoop(CallbackInfo ci) {
@@ -48,7 +48,7 @@ public class MinecraftServerMixin {
     }
 
     @Inject(
-        method = "tick",
+        method = "tickServer",
         at = @At("HEAD")
     )
     private void onTickStart(CallbackInfo ci) {
@@ -56,7 +56,7 @@ public class MinecraftServerMixin {
     }
 
     @Inject(
-        method = "tick",
+        method = "tickServer",
         at = @At(
             value = "CONSTANT",
             args = "stringValue=tallying"
